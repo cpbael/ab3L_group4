@@ -1,1 +1,1 @@
-main(){printf(hi earth);}
+main(){printf("hi earth");}

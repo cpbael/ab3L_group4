@@ -45,7 +45,7 @@
 			
 			$rate=mysql_fetch_array((mysql_query("SELECT rate from service where service_id='$service_id';")));
 			$price= $diff_hour * $rate[0];
-			$query_insert_reservation="INSERT INTO reservation(service_id,start_date,end_date,is_Member,member_id,price,isPaid) VALUES($service_id,'$start_date','{$end_date}',0,{$reserver_id},{$price},0);";
+			$query_insert_reservation="INSERT INTO reservation(service_id,start_date,end_date,is_Member,member_id,price,is_Paid) VALUES($service_id,'$start_date','{$end_date}',0,{$reserver_id},{$price},0);";
 			if(mysql_query($query_insert_reservation)){
 				$_SESSION['ERROR']=false;
 				$_SESSION['MSG']="Service succesfully reserved from<br/><strong>$start_date to $end_date</strong><br/>Price: $price";

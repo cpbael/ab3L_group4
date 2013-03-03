@@ -1,6 +1,6 @@
 <?php 
-  require_once "process_check_if_logged_in.php";
-  require_once "sql_connect.php";
+	require_once "process_check_if_logged_in.php";
+	require_once "sql_connect.php";
 	require_once"header.php";
 	//require_once "do_check_login.php";
 ?>

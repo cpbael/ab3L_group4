@@ -67,15 +67,6 @@
 	<td><input class = "form"type="text" name="username" value="<?php echo $account_info['uname'];?>" size="35" />
 	</td>
 	
-	<!--tr>
-		<td class = "loginBottom1">Password: </td>
-		<td><input class = "form"type="password" name="pwd" value="<?php echo $account_info['eadd'];?>" size="35" />
-	</td-->
-	
-	<!--tr>
-		<td class = "loginBottom1">Confirm Password: </td>
-		<td><input class = "form"type="password" name="pwdconfirm" value="" size="35" />
-	</td-->
 
 	</br>
 	
@@ -95,7 +86,11 @@
 	  <option value="MALE" >MALE</option>
 	  <option value="FEMALE" >FEMALE</option>
 	</select> </td></tr-->
-	
+	<tr>
+			<td class = "loginBottom1">Credit Card No.:</td>
+			<td><input class = "form"type="text" name="creditcardno" value="<?php echo $account_info['creditcardno']; ?>" size="35" required="required" pattern = "[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"/>
+			</td>
+	</tr>	
 	</br>
 	
 	<tr>

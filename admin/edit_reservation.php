@@ -2,14 +2,15 @@
 	require_once"process_check_if_logged_in.php";
 	require_once"header.php";
 	require_once"sql_connect.php";	
-	$info=mysql_fetch_array(mysql_query("SELECT * FROM	service WHERE service_id={$_GET['service_id']}"));
+	$info=mysql_fetch_array(mysql_query("SELECT * FROM reservation WHERE reservation_id={$_GET['reservation_id']}"));
+	$info2=mysql_fetch_array(mysql_query("SELECT * FROM service where service_id={$info['service_id']}"));
 ?>
 	<div class="log3">
 	<table class = "loginBottom"> 
 	<form name = "add" method = "POST" action = "process_edit_reservation.php?service_id=<?php echo $_GET['service_id'];?>">
 		<tr>
 			<div class = "signup">
-				<?php echo $info['service_name']; ?>
+				<?php echo $info2['service_name']; ?>
 			</div>
 		</tr>
 		<br />
@@ -24,31 +25,31 @@
 			<td class = "loginBottom1">
 			</td>
 			<td>
-				<img id='itemImg' src="images/<?php echo $info['image'];?>"/>
+				<img id='itemImg' src="images/<?php echo $info2['image'];?>"/>
 			</td>
 		</tr>
 		<tr>
 			<td class = "loginBottom1">Rate per Day:</td>
 			<td>
-				<?php echo $info['rate'];?>
+				<?php echo $info2['rate'];?>
 			</td>
 		</tr>
 		<tr>
 			<td class = "loginBottom1">Classification:</td>
 			<td>
-				<?php echo $info['classification'];?>
+				<?php echo $info2['classification'];?>
 			</td>
 		</tr>
 		<tr>
 			<td class = "loginBottom1">Article:</td>
 			<td>
-				<?php echo $info['article'];?>
+				<?php echo $info2['article'];?>
 			</td>
 		</tr>
 		<tr>
 			<td class = "loginBottom1"> First Name:</td>
 			<td>
-				<input type="text" name="first_name" required>
+				<input type="text" name="first_name" required value="<?php echo ?>">
 			</td>
 		</tr>
 		<tr>

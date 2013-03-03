@@ -16,7 +16,7 @@
 			}
 			$j=0;
 			echo "<td><table id='service'>";
-				echo "<tr><td><img id='itemImg' src='images/{$services[$i]['image']}'/></td></tr>";
+				echo "<tr><td><img id='itemImg' src='../image/{$services[$i]['image']}'/></td></tr>";
 				echo "<tr><td>{$services[$i]['service_name']}</td></tr>";
 				echo "<tr><td>{$services[$i]['rate']}</td></tr>";
 				echo "<tr><td>{$services[$i]['classification']}</td></tr>";

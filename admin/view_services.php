@@ -16,12 +16,12 @@
 			}
 			$j=0;
 ?>			<td><table id='service'>
-<?php			echo "<tr><td><img id='itemImg' src='images/{$services[$i]['images']}'/></td></tr>";
+<?php			echo "<tr><td><img id='itemImg' src='../image/{$services[$i]['image']}'/></td></tr>";
 				echo "<tr><td>{$services[$i]['service_name']}</td></tr>";
 				echo "<tr><td>{$services[$i]['rate']}</td></tr>";
 				echo "<tr><td>{$services[$i]['classification']}</td></tr>";
 				echo "<tr><td>{$services[$i]['article']}</td></tr>";
-				echo "<tr><td><a href='add_reservation.php?service_id={$services[$i]['service_id']}'>Add reservation</a></td></tr>";
+				echo "<tr><td><a href='make_reservation.php?service_id={$services[$i]['service_id']}'>Make reservation</a></td></tr>";
 			echo "</table></td>";
 			if($col==4){
 				echo "</tr>";	

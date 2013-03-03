@@ -6,7 +6,8 @@
 ?>
 
 	<span class = "allTextBlue"><a class = "button2" href="add_service.php">Add Service</a></span> <br/>
-	<span class = "allTextBlue"><a class = "button2" href="show_services.php">Show Services</a></span>
-	<span		>
+	<span class = "allTextBlue"><a class = "button2" href="show_services.php">Show Services</a></span><br/>
+	<span class = "allTextBlue"><a class = "button2" href="view_services.php">Make Reservation</a></span>
+
 
 <?php require_once"footer.php";?>

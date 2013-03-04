@@ -33,12 +33,12 @@
 			echo $_SESSION['MSG'];
 		}else{
 			//check if the guest is already registered
-			if($regd=mysql_fetch_array(mysql_query("SELECT guest_id from guest where UPPER(first_name)=UPPER('{$_POST['first_name']}') and UPPER(last_name)=UPPER('{$_POST['last_name']}');"))){
+			if($regd=mysql_fetch_array(mysql_query("SELECT guest_id from guest where UPPER(fullname)=UPPER('{$_POST['name']}');"))){
 				$reserver_id=$regd[0];
 			}else{
-				$query_add_guest="INSERT INTO guest(first_name,last_name,contact_no) VALUES ('{$_POST['first_name']}','{$_POST['last_name']}','{$_POST['contact_num']}');";
+				$query_add_guest="INSERT INTO guest(first_name,last_name,contact_no) VALUES ('{$_POST['name']}','{$_POST['contact_num']}');";
 				if(mysql_query($query_add_guest)){
-					$guest=mysql_fetch_array(mysql_query("SELECT guest_id from guest where UPPER(first_name)=UPPER('{$_POST['first_name']}') and UPPER(last_name)=UPPER('{$_POST['last_name']}');"));
+					$guest=mysql_fetch_array(mysql_query("SELECT guest_id from guest where UPPER(fullname)=UPPER('{$_POST['name']}');"));
 					$reserver_id=$guest[0];
 				}
 			}

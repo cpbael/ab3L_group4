@@ -3,26 +3,22 @@
 	require_once("process_check_if_logged_in.php");
 	require_once("sql_connect.php");
 	$member_id=$_SESSION['member_id'];
-
 ?>
 	<div class="log3">
-	
-	
 		<table class = "loginBottom"> 
 		<form method="POST" action="process_confirm_reservation.php">
-		<?php
-
+	<?php
 		$query="SELECT * from reservation where member_id={$member_id} and is_Paid='0';";
 		$result=mysql_query($query);
 		$total=0;
 		if($result){
-		?>	<tr>
+	?>	<tr>
 			<th>SERVICE NAME</th>
 			<th>START DATE</th>
 			<th>END DATE</th>
 			<th>PRICE</th>
-			</tr>
-		<?php
+		</tr>
+	<?php
 		}
 		
 		if($result){
@@ -39,7 +35,7 @@
 			$total+=$row['price'];	
 		}
 			echo "<input type=\"hidden\" value={$total} name=\"total_reservation\"/>";			
-		?>
+	?>
 		
 		<tr>
 			<td colspan="2"></td>

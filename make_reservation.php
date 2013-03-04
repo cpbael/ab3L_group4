@@ -46,17 +46,17 @@
 			</td>
 		</tr>
 		<tr>
-			<td class = "loginBottom1"> First Name:</td>
+			<td class = "loginBottom1">Name:</td>
 			<td>
-				<input type="text" name="first_name" required>
+				<input type="text" name="name" required>
 			</td>
 		</tr>
-		<tr>
+		<!--tr>
 			<td class = "loginBottom1"> Last Name:</td>
 			<td>
 				<input type="text" name="last_name" required>
 			</td>
-		</tr>
+		</tr-->
 		<tr>
 			<td class = "loginBottom1">Contact Number:</td>
 			<td>

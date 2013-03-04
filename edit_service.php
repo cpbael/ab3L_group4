@@ -6,7 +6,7 @@
 ?>
 	<div class="log3">
 	<table class = "loginBottom"> 
-	<form name = "add" method = "POST" action = "process_edit_service.php?service_id=<?php echo $_GET['service_id'];?>" enctype="multipart/form-data">
+	<form name = "add" method = "POST" action = "process_edit_service.php?service_id=<?php echo $_GET['service_id'];?>&image=<?php echo $account_info['image']?>" enctype="multipart/form-data">
 		
 		<tr>
 			<div class = "signup">
@@ -21,7 +21,13 @@
 		<tr>
 			<td colspan = "2"><hr><td>
 		</tr>
-
+		<tr>
+			<td class = "loginBottom1">
+			</td>
+			<td>
+				<img id='item_img' src="images/<?php echo $account_info['image'];?>"/>
+			</td>
+		</tr>
 		<tr>
 			<td class = "loginBottom1">Service Name: </td> 
 			<td><input class = "form" type="text" name="service_name" value="<?php echo $account_info['service_name'];?>" size="35"   required="required" onchange = "toUpper(this)" pattern= "[a-zA-Z0-9 ]*[a-zA-Z0-9 ]*[a-zA-Z0-9 ]"/>
@@ -37,12 +43,12 @@
 			<td><input class = "form" type="text" name="type" value="" size="35"   required="required" onchange = "toUpper(this)" pattern= "[a-zA-Z0-9 ]*[a-zA-Z0-9 ]*[a-zA-Z0-9 ]"/>
 			</td>
 		</tr-->
-		<!--tr>
+		<tr>
 			<td class = "loginBottom1">Image:</td>
 			<td>
-				<input class = "form" type="file" name="image" value=="<?php echo $account_info['image'];?>"  required="required" />
+				<input class = "form" type="file" name="item_img" value=="<?php echo $account_info['image'];?>"/>
 			</td>
-		</tr-->
+		</tr>
 		<tr>
 			<td class = "loginBottom1">Classification:</td>
 			<td>

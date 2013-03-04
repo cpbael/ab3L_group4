@@ -38,7 +38,7 @@
 		<tr>
 			<td class = "loginBottom1">Image:</td>
 			<td>
-				<input class = "form" type="file" name="image"  required="required" />
+				<input class = "form" type="file" name="item_img"  required="required" />
 			</td>
 		</tr>
 		<tr>

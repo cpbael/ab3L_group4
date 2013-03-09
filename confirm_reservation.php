@@ -2,11 +2,22 @@
 	require_once("header.php");
 	require_once("process_check_if_logged_in.php");
 	require_once("sql_connect.php");
-	$member_id=$_SESSION['member_id'];
+	$member_id=5;
 ?>
+<html>
+<head>
+<script type="text/javascript">
+function promptConfirm(){
+	var r=confirm("Are you sure about your reservation?");
+	if(r==true) return true;
+	else return false;
+}
+</script>
+</head>
+<body>
 	<div class="log3">
 		<table class = "loginBottom"> 
-		<form method="POST" action="process_confirm_reservation.php">
+		<form method="POST" onsubmit="return promptConfirm();" action="process_confirm_reservation.php">
 	<?php
 		$query="SELECT * from reservation where member_id={$member_id} and is_Paid='0';";
 		$result=mysql_query($query);
@@ -49,7 +60,7 @@
 		</tr>
 		<tr>
 			<td colspan = "4" class = "loginBottom1">
-			<input id="mysubmit" type="submit" value="CONFIRM" name = "confirmButton" />
+			<input id="mysubmit" type="submit" value="CONFIRM" name = "confirmButton" "/>
 		</td>
 		</tr>
 		
@@ -76,6 +87,7 @@
 		</form>
 
 </div>
+</html>
 <?php
 	require_once("footer.php");
 	require_once("sql_disconnect.php");

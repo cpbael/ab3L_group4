@@ -1,0 +1,12 @@
+type
+reservation = unahan sa pagbayad
+	- confirm check lahat ng reservation na kaparehas na paid
+pagination
+admin UI
+form validation
+SRS
+User story
+
+video
+	tayo
+	walk through

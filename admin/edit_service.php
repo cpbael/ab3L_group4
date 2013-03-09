@@ -3,10 +3,13 @@
 	require_once "header.php";
 	require_once "sql_connect.php";
 	$account_info=mysql_fetch_array(mysql_query("select * from service where service_id={$_GET['service_id']};"));
+	$type_info=mysql_fetch_array(mysql_query("select * from type where type_id={$account_info['type_id']};"));
+	$type=mysql_query("select * from type;");
+	
 ?>
 	<div class="log3">
 	<table class = "loginBottom"> 
-	<form name = "add" method = "POST" action = "process_edit_service.php?service_id=<?php echo $_GET['service_id'];?>" enctype="multipart/form-data">
+	<form name = "add" method = "POST" action = "process_edit_service.php?service_id=<?php echo $_GET['service_id'];?>&image=<?php echo $type_info['image']?>" enctype="multipart/form-data">
 		
 		<tr>
 			<div class = "signup">
@@ -21,7 +24,13 @@
 		<tr>
 			<td colspan = "2"><hr><td>
 		</tr>
-
+		<tr>
+			<td class = "loginBottom1">
+			</td>
+			<td>
+				<img id='item_img' src="images/<?php echo $type_info['image'];?>"/>
+			</td>
+		</tr>
 		<tr>
 			<td class = "loginBottom1">Service Name: </td> 
 			<td><input class = "form" type="text" name="service_name" value="<?php echo $account_info['service_name'];?>" size="35"   required="required" onchange = "toUpper(this)" pattern= "[a-zA-Z0-9 ]*[a-zA-Z0-9 ]*[a-zA-Z0-9 ]"/>
@@ -37,19 +46,22 @@
 			<td><input class = "form" type="text" name="type" value="" size="35"   required="required" onchange = "toUpper(this)" pattern= "[a-zA-Z0-9 ]*[a-zA-Z0-9 ]*[a-zA-Z0-9 ]"/>
 			</td>
 		</tr-->
-		<!--tr>
+		<tr>
 			<td class = "loginBottom1">Image:</td>
 			<td>
-				<input class = "form" type="file" name="image" value=="<?php echo $account_info['image'];?>"  required="required" />
+				<input class = "form" type="file" name="item_img" value=="<?php echo $type_info['image'];?>"/>
 			</td>
-		</tr-->
+		</tr>
 		<tr>
-			<td class = "loginBottom1">Classification:</td>
+			<td class = "loginBottom1">Type:</td>
 			<td>
-				<select name="classification">
-					<option value="ROOM">ROOM</option>
-					<option value="FACILITY">FACILITY</option>
-					<option value="SERVICE">SERVICE</option>
+				<select name="type">
+					<?php
+						while ($type_i=mysql_fetch_array($type)){
+							echo "<option value='{}'>
+							{$type_i['type_name']}</option>";
+						}
+					?>
 				</select>
 			</td>
 		</tr>
@@ -74,11 +86,11 @@
 				?>
 				</span>
 			</td>
-		</tr>
-
-	
+		</tr>	
 </table>
 </form>	
 </div>
-<?php require_once"footer.php";?>
-<?php require_once "sql_disconnect.php";?>
+<?php
+	require_once"footer.php";
+	require_once "sql_disconnect.php";
+?>

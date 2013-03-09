@@ -12,7 +12,6 @@
 	
 	</br>
 	<?php
-		session_start();
 		if(!(isset($_SESSION['login_msg']))){
 			$_SESSION['login_msg']="Fill up to login";
 		}

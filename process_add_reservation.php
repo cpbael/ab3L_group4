@@ -37,7 +37,7 @@
 			//$price= (($diff->m * 30 )+($diff->d * 24))* $rate[0];
 			$price= $diff_hour * $rate[0];
 			echo "<br/> Price:".$price;
-			$query_insert_reservation="INSERT INTO reservation(service_id,start_date,end_date,is_Member,member_id,price) VALUES($service_id,'$start_date','{$end_date}',1,{$_SESSION['member_id']},{$price});";
+			$query_insert_reservation="INSERT INTO reservation(service_id,start_date,end_date,is_Member,member_id,price,status) VALUES($service_id,'{$start_date}','{$end_date}',1,{$_SESSION['member_id']},{$price},-1);";
 			if(mysql_query($query_insert_reservation)){
 				$_SESSION['ERROR']=false;
 				$_SESSION['MSG']="Service succesfully reserved from<br/><strong>$start_date to $end_date</strong><br/>Price: $price";
